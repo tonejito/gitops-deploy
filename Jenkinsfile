@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     // Uncomment to get lots of debugging output
-                    openshift.logLevel(1)
+                    //openshift.logLevel(1)
                     openshift.withCluster() {
                         echo("Create project ${env.PRJ}") 
                         openshift.newProject("${env.PRJ}")
@@ -83,8 +83,8 @@ pipeline {
         always {
             script {
                 openshift.withCluster() {
-                    echo("Delete project ${env.PRJ} (dummy)") 
-                    // openshift.delete("project/${env.PRJ}")
+                    echo("Delete project ${env.PRJ}")
+                    openshift.delete("project/${env.PRJ}")
                 }
             }
         }
