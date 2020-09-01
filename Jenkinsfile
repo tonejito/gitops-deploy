@@ -83,8 +83,8 @@ pipeline {
         always {
             script {
                 openshift.withCluster() {
-                    echo("Delete project ${env.PRJ}") 
-                    openshift.delete("project/${env.PRJ}")
+                    echo("Delete project ${env.PRJ} (dummy)") 
+                    // openshift.delete("project/${env.PRJ}")
                 }
             }
         }
