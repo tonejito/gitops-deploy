@@ -14,7 +14,7 @@ pipeline {
             steps {
                 script {
                     // Uncomment to get lots of debugging output
-                    //openshift.logLevel(1)
+                    openshift.logLevel(1)
                     openshift.withCluster() {
                         echo("Create project ${env.PRJ}") 
                         openshift.newProject("${env.PRJ}")
